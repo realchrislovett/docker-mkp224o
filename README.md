@@ -6,4 +6,4 @@
 
 ### To use, run:
 
-`docker run --rm clovett/mkp224o`
+``docker run --rm -v `pwd`/onions:/onions -w /onions clovett/mkp224o``
