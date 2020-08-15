@@ -17,4 +17,4 @@ RUN apk add libsodium
 
 COPY --from=builder /mkp224o/mkp224o .
 
-CMD ["/mkp224o"]
+ENTRYPOINT ["/mkp224o"]
