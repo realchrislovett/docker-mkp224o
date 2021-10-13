@@ -11,10 +11,10 @@ RUN apk add git gcc musl-dev libsodium-dev make autoconf ;\
 
 FROM alpine:latest
 
-WORKDIR /
+RUN apk add --no-cache libsodium
 
-RUN apk add libsodium
+COPY --from=builder /mkp224o/mkp224o /bin/mkp224o
 
-COPY --from=builder /mkp224o/mkp224o .
+WORKDIR /onions
 
-ENTRYPOINT ["/mkp224o"]
+ENTRYPOINT ["/bin/mkp224o"]
